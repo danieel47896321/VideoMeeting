@@ -2,4 +2,7 @@
 <resources>
     <string name="app_name">VideoMeeting</string>
     <string name="Title">כותרת</string>
+    <!-- MainActivity Page -->
+    <string name="SignIn">כניסה</string>
+    <string name="CreateAccount">צור חשבון</string>
 </resources>
