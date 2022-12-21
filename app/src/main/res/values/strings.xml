@@ -4,11 +4,21 @@
     <!-- MainActivity Page -->
     <string name="SignIn">Sign In</string>
     <string name="CreateAccount">Create Account</string>
+    <!-- SignIn Page -->
+    <string name="Email">Email</string>
+    <string name="Password">Password</string>
+    <string name="ForgotPassword" translatable="true">Forgot password? Reset Password</string>
+    <!-- CreateAccount Page -->
+    <string name="FirstName">First Name</string>
+    <string name="LastName">Last Name</string>
+    <string name="ConfirmPassword">Confirm Password</string>
+    <string name="Finish">Finish</string>
+    <!-- ResetPassword Page -->
+    <string name="ResetPassword">ResetPassword</string>
+    <string name="ForgotPasswordInfo" translatable="true">Please enter the email address which you want to reset the password.</string>
     <!-- Arrays -->
     <string-array name="Main">
         <item>@string/SignIn</item>
         <item>@string/CreateAccount</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 </resources>

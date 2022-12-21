@@ -5,4 +5,16 @@
     <!-- MainActivity Page -->
     <string name="SignIn">כניסה</string>
     <string name="CreateAccount">צור חשבון</string>
+    <!-- SignIn Page -->
+    <string name="Email">אימייל</string>
+    <string name="Password">סיסמה</string>
+    <string name="ForgotPassword" translatable="true">שכחת את הסיסמה? איפוס סיסמה</string>
+    <!-- CreateAccount Page -->
+    <string name="FirstName">שם פרטי</string>
+    <string name="LastName">שם משפחה</string>
+    <string name="ConfirmPassword">אימות סיסמה</string>
+    <string name="Finish">סיום</string>
+    <!-- ResetPassword Page -->
+    <string name="ResetPassword">איפוס סיסמה</string>
+    <string name="ForgotPasswordInfo" translatable="true">נא הזן את כתובת האימייל שברצונך לשחזר עבורו את הסיסמה</string>
 </resources>

@@ -38,11 +38,9 @@ class MainActivity : AppCompatActivity() {
         setPager()
     }
     private fun setPager() {
-        pagerAdapter = PagerAdapter(this@MainActivity)
+        pagerAdapter = PagerAdapter(this)
         viewPager2.adapter = pagerAdapter
-        TabLayoutMediator(tabLayout, viewPager2) { tab: TabLayout.Tab, position: Int ->
-            tab.text = titles[position]
-        }.attach()
+        TabLayoutMediator(tabLayout, viewPager2) { tab: TabLayout.Tab, position: Int -> tab.text = titles[position] }.attach()
     }
     class PagerAdapter(fragmentActivity: FragmentActivity) :
         FragmentStateAdapter(fragmentActivity) {
