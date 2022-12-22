@@ -29,6 +29,7 @@
     <!-- ResetPassword Page -->
     <string name="ResetPassword">ResetPassword</string>
     <string name="ForgotPasswordInfo" translatable="true">Please enter the email address which you want to reset the password.</string>
+    <string name="ResetLink" translatable="true">Reset Link has been send to your Email.</string>
     <!-- Arrays -->
     <string-array name="Main">
         <item>@string/SignIn</item>

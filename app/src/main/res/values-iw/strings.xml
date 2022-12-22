@@ -30,4 +30,5 @@
     <!-- ResetPassword Page -->
     <string name="ResetPassword">איפוס סיסמה</string>
     <string name="ForgotPasswordInfo" translatable="true">נא הזן את כתובת האימייל שברצונך לשחזר עבורו את הסיסמה</string>
+    <string name="ResetLink" translatable="true">קישור לאיפוס הסיסמה נשלח לאימייל.</string>
 </resources>
