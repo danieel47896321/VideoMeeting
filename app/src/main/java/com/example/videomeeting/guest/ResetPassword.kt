@@ -1,4 +1,4 @@
-package com.example.videomeeting.Guest
+package com.example.videomeeting.guest
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

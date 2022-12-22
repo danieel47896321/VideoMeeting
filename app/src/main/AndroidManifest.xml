@@ -14,7 +14,7 @@
         android:theme="@style/Theme.VideoMeeting"
         tools:targetApi="31">
         <activity
-            android:name=".Guest.ResetPassword"
+            android:name=".guest.ResetPassword"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

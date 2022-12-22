@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">VideoMeeting</string>
     <string name="Title">Title</string>
+    <string name="Loading">Loading</string>
+    <string name="OK">OK</string>
+    <string name="ErrorMSG">Something went wrong please try again in a few minutes.</string>
+    <string name="Error">Error</string>
     <!-- MainActivity Page -->
     <string name="SignIn">Sign In</string>
     <string name="CreateAccount">Create Account</string>
@@ -13,6 +17,12 @@
     <string name="LastName">Last Name</string>
     <string name="ConfirmPassword">Confirm Password</string>
     <string name="Finish">Finish</string>
+    <string name="Required">Required</string>
+    <string name="MinimumChars">Required minimum 6 chars</string>
+    <string name="InvalidEmail">Invalid Email</string>
+    <string name="InvalidPassword">Invalid Password</string>
+    <string name="EmailExist">Email exist in the system</string>
+    <string name="CompleteCreateAccount">Successfully registered, Please verify your email with link sent to your email.</string>
     <!-- ResetPassword Page -->
     <string name="ResetPassword">ResetPassword</string>
     <string name="ForgotPasswordInfo" translatable="true">Please enter the email address which you want to reset the password.</string>

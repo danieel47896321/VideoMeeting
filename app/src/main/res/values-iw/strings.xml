@@ -2,6 +2,10 @@
 <resources>
     <string name="app_name">VideoMeeting</string>
     <string name="Title">כותרת</string>
+    <string name="Loading">טוען</string>
+    <string name="OK">אישור</string>
+    <string name="ErrorMSG">משהו השתבש, אנא נסה שוב בעוד כמה דקות.</string>
+    <string name="Error">שגיאה</string>
     <!-- MainActivity Page -->
     <string name="SignIn">כניסה</string>
     <string name="CreateAccount">צור חשבון</string>
@@ -14,6 +18,12 @@
     <string name="LastName">שם משפחה</string>
     <string name="ConfirmPassword">אימות סיסמה</string>
     <string name="Finish">סיום</string>
+    <string name="Required">חובה</string>
+    <string name="MinimumChars">חובה מינימום 6 תווים</string>
+    <string name="InvalidEmail">אימייל לא תקין</string>
+    <string name="InvalidPassword">סיסמה לא תואמת</string>
+    <string name="EmailExist">האימייל כבר קיים במערכת</string>
+    <string name="CompleteCreateAccount">נרשמת בהצלחה, בבקשה אמת את חשבונך בעזרת קישור אימות שנשלח לאיימיל שלך.</string>
     <!-- ResetPassword Page -->
     <string name="ResetPassword">איפוס סיסמה</string>
     <string name="ForgotPasswordInfo" translatable="true">נא הזן את כתובת האימייל שברצונך לשחזר עבורו את הסיסמה</string>
