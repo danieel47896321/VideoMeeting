@@ -1,5 +1,4 @@
 package com.example.videomeeting.guest
-
 import android.os.Bundle
 import android.util.Patterns
 import android.view.LayoutInflater

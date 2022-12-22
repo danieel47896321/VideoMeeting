@@ -35,7 +35,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/TextInputLayout_Style"
-                    android:id="@+id/TextInputLayoutEmail"
+                    android:id="@+id/textInputLayoutEmail"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:layout_marginTop="10dp"
@@ -45,7 +45,6 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         style="@style/TextInputEditText_Style"
-                        android:id="@+id/TextInputEditTextInputEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textEmailAddress" />
@@ -53,7 +52,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/TextInputLayout_Style"
-                    android:id="@+id/TextInputLayoutPassword"
+                    android:id="@+id/textInputLayoutPassword"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:hint="@string/Password"
@@ -62,7 +61,6 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         style="@style/TextInputEditText_Style"
-                        android:id="@+id/TextInputEditTextInputPassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPassword" />
@@ -71,17 +69,14 @@
 
                 <Button
                     style="@style/Button_Style"
-                    android:id="@+id/ButtonSignIn"
+                    android:id="@+id/buttonSignIn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/SignIn"
-                    app:layout_constraintEnd_toEndOf="@+id/TextInputLayoutPassword"
-                    app:layout_constraintStart_toStartOf="@+id/TextInputLayoutPassword"
-                    app:layout_constraintTop_toBottomOf="@+id/ResetPassword" />
+                    android:text="@string/SignIn" />
 
                 <TextView
                     style="@style/Clicked_TextView_Style"
-                    android:id="@+id/ResetPassword"
+                    android:id="@+id/resetPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"

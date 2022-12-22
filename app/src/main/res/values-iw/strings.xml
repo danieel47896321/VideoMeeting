@@ -13,6 +13,9 @@
     <string name="Email">אימייל</string>
     <string name="Password">סיסמה</string>
     <string name="ForgotPassword" translatable="true">שכחת את הסיסמה? איפוס סיסמה</string>
+    <string name="CheckEmailVerify">חשבון זה עדיין לא אומת, בבקשה בדוק את הקישור שנשלח לאימייל שלך ואמת את החשבון.</string>
+    <string name="EmailNotExist">האימייל לא קיים במערכת</string>
+    <string name="WrongPassword">סיסמה שגויה</string>
     <!-- CreateAccount Page -->
     <string name="FirstName">שם פרטי</string>
     <string name="LastName">שם משפחה</string>

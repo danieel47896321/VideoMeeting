@@ -12,6 +12,9 @@
     <string name="Email">Email</string>
     <string name="Password">Password</string>
     <string name="ForgotPassword" translatable="true">Forgot password? Reset Password</string>
+    <string name="CheckEmailVerify">This account not verify yet, please check the link sent to your email to verify this account.</string>
+    <string name="EmailNotExist">Email not exist in the system</string>
+    <string name="WrongPassword">Wrong Password</string>
     <!-- CreateAccount Page -->
     <string name="FirstName">First Name</string>
     <string name="LastName">Last Name</string>
