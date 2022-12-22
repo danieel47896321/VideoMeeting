@@ -31,4 +31,10 @@
     <string name="ResetPassword">איפוס סיסמה</string>
     <string name="ForgotPasswordInfo" translatable="true">נא הזן את כתובת האימייל שברצונך לשחזר עבורו את הסיסמה</string>
     <string name="ResetLink" translatable="true">קישור לאיפוס הסיסמה נשלח לאימייל.</string>
+    <!-- Home Page -->
+    <string name="Home">Home</string>
+    <string name="SignOut">התנתק</string>
+    <string name="No">לא</string>
+    <string name="Yes">כן</string>
+    <string name="AreYouSure">האם אתה בטוח שברצונך להתנתק?</string>
 </resources>

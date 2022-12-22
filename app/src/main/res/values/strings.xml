@@ -30,6 +30,12 @@
     <string name="ResetPassword">ResetPassword</string>
     <string name="ForgotPasswordInfo" translatable="true">Please enter the email address which you want to reset the password.</string>
     <string name="ResetLink" translatable="true">Reset Link has been send to your Email.</string>
+    <!-- Home Page -->
+    <string name="Home">Home</string>
+    <string name="SignOut">Sign Out</string>
+    <string name="No">No</string>
+    <string name="Yes">Yes</string>
+    <string name="AreYouSure">Are you sure you want to Sign Out?</string>
     <!-- Arrays -->
     <string-array name="Main">
         <item>@string/SignIn</item>

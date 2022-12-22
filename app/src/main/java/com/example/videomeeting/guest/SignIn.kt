@@ -35,14 +35,14 @@ class SignIn : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         myView = inflater.inflate(R.layout.fragment_sign_in, container, false)
         firebaseAuth = FirebaseAuth.getInstance()
-        textInputLayoutEmail = myView.findViewById<TextInputLayout>(R.id.textInputLayoutEmail)
-        textInputLayoutPassword = myView.findViewById<TextInputLayout>(R.id.textInputLayoutPassword)
-        buttonSignIn = myView.findViewById<Button>(R.id.buttonSignIn)
-        resetPassword = myView.findViewById<TextView>(R.id.resetPassword)
         if (firebaseAuth.currentUser != null && firebaseAuth.currentUser!!.isEmailVerified) {
             loading = Loading(myView.context)
             getUser()
         }
+        textInputLayoutEmail = myView.findViewById<TextInputLayout>(R.id.textInputLayoutEmail)
+        textInputLayoutPassword = myView.findViewById<TextInputLayout>(R.id.textInputLayoutPassword)
+        buttonSignIn = myView.findViewById<Button>(R.id.buttonSignIn)
+        resetPassword = myView.findViewById<TextView>(R.id.resetPassword)
         endIcon()
         signInCheck()
         resetPasswordButton()
@@ -57,7 +57,6 @@ class SignIn : Fragment() {
                         val user = snapshot.getValue(User::class.java)
                         moveToHome(user)
                     }
-
                     override fun onCancelled(error: DatabaseError) {}
                 })
         }
