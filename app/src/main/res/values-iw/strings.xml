@@ -37,4 +37,8 @@
     <string name="No">לא</string>
     <string name="Yes">כן</string>
     <string name="AreYouSure">האם אתה בטוח שברצונך להתנתק?</string>
+    <!-- OutgoingCall Page -->
+    <string name="Call">מחייג</string>
+    <string name="Cancel">ביטול</string>
+    <string name="VideoCall">שיחת וידיאו</string>
 </resources>
