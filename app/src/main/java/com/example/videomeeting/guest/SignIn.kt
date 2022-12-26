@@ -50,8 +50,7 @@ class SignIn : Fragment() {
     }
     private fun getUser() {
         if (firebaseAuth.currentUser != null) {
-            databaseReference.child(firebaseAuth.currentUser!!.uid)
-                .addValueEventListener(object : ValueEventListener {
+            databaseReference.child(firebaseAuth.currentUser!!.uid).addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         loading.stop()
                         val user = snapshot.getValue(User::class.java)

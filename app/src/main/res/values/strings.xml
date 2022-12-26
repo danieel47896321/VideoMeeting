@@ -37,9 +37,12 @@
     <string name="Yes">Yes</string>
     <string name="AreYouSure">Are you sure you want to Sign Out?</string>
     <!-- OutgoingCall Page -->
-    <string name="Call">Call</string>
+    <string name="Call">Calling</string>
     <string name="Cancel">Cancel</string>
-    <string name="VideoCall">Video Call</string>
+    <string name="VideoCall">Video Calling</string>
+    <!-- IncomingCall Page -->
+    <string name="Decline">Decline</string>
+    <string name="Accept">Accept</string>
     <!-- Arrays -->
     <string-array name="Main">
         <item>@string/SignIn</item>

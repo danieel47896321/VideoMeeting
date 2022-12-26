@@ -32,7 +32,7 @@
     <string name="ForgotPasswordInfo" translatable="true">נא הזן את כתובת האימייל שברצונך לשחזר עבורו את הסיסמה</string>
     <string name="ResetLink" translatable="true">קישור לאיפוס הסיסמה נשלח לאימייל.</string>
     <!-- Home Page -->
-    <string name="Home">Home</string>
+    <string name="Home">ראשי</string>
     <string name="SignOut">התנתק</string>
     <string name="No">לא</string>
     <string name="Yes">כן</string>
@@ -41,4 +41,7 @@
     <string name="Call">מחייג</string>
     <string name="Cancel">ביטול</string>
     <string name="VideoCall">שיחת וידיאו</string>
+    <!-- IncomingCall Page -->
+    <string name="Decline">דחה</string>
+    <string name="Accept">קבל</string>
 </resources>
