@@ -17,6 +17,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.messaging.FirebaseMessaging
 
 
 class Home : AppCompatActivity() {
@@ -47,8 +48,23 @@ class Home : AppCompatActivity() {
         val fullName = "${user.firstName} ${user.lastName}"
         textViewFullName.text = fullName
         textViewEmail.text = user.email
+        setToken()
         backIcon()
         setUsers()
+    }
+    private fun setToken(){
+        if(user.token == "Token") { //no token yet
+            FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
+                if (!task.isSuccessful) { }
+                if (task.result != null) {
+                    val token: String = task.result
+                    user.token = token
+                    val firebaseDatabase = FirebaseDatabase.getInstance("https://videomeeting-86807-default-rtdb.europe-west1.firebasedatabase.app")
+                    val databaseReference = firebaseDatabase.reference.child("Users")
+                    databaseReference.child(user.uid).child("token").setValue(token)
+                }
+            }
+        }
     }
     private fun setUsers() {
         databaseReference.addValueEventListener(object : ValueEventListener {

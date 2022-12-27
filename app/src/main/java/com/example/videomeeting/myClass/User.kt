@@ -4,6 +4,7 @@ import java.io.Serializable
 
 class User : Serializable {
     var uid = "Uid"
+    var token = "Token"
     var email = "test@email.com"
     var firstName = "FirstName"
     var lastName = "LastName"

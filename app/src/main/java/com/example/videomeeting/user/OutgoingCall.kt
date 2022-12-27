@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.example.videomeeting.R
 import com.example.videomeeting.myClass.User
+import com.google.firebase.messaging.FirebaseMessaging
 
 class OutgoingCall : AppCompatActivity() {
     private lateinit var type: String
@@ -32,7 +34,11 @@ class OutgoingCall : AppCompatActivity() {
         else
             textViewType.text = "${resources.getString(R.string.VideoCall)}..."
         textViewFullName.text = "${destUser.firstName} ${destUser.lastName}"
+        setNewCall()
         buttonCancel()
+    }
+    private fun setNewCall(){
+
     }
     private fun buttonCancel() { imageViewButtonCancel.setOnClickListener{ onBackPressed() } }
     override fun onBackPressed() {
