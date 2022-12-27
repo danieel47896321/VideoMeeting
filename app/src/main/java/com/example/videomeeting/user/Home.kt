@@ -43,7 +43,7 @@ class Home : AppCompatActivity() {
         textViewFullName = findViewById<TextView>(R.id.textViewFullName)
         textViewEmail = findViewById<TextView>(R.id.textViewEmail)
         title.setText(R.string.Home)
-        backIcon.setImageDrawable(resources.getDrawable(R.drawable.signout))
+        backIcon.setImageResource(R.drawable.signout)
         val fullName = "${user.firstName} ${user.lastName}"
         textViewFullName.text = fullName
         textViewEmail.text = user.email

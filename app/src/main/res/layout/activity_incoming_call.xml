@@ -48,13 +48,14 @@
         android:id="@+id/linearLayoutCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="30dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
+            android:padding="10dp"
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -62,9 +63,10 @@
             <ImageView
                 android:foreground="?android:attr/selectableItemBackground"
                 android:id="@+id/imageViewButtonAccept"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/phone" />
+                android:background="@drawable/accept_background"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/accept" />
 
             <TextView
                 style="@style/TextView_Style"
@@ -75,25 +77,25 @@
         </LinearLayout>
 
         <LinearLayout
+            android:padding="10dp"
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
         <ImageView
             android:foreground="?android:attr/selectableItemBackground"
-            android:id="@+id/imageViewButtonDecline"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/cancel" />
+            android:id="@+id/imageViewButtonReject"
+            android:background="@drawable/reject_background"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/reject" />
 
         <TextView
             style="@style/TextView_Style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/Decline" />
+            android:text="@string/Reject" />
         </LinearLayout>
-
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

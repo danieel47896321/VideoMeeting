@@ -10,7 +10,7 @@ import com.example.videomeeting.myClass.User
 
 class OutgoingCall : AppCompatActivity() {
     private lateinit var type: String
-    private lateinit var dest: String
+    private lateinit var destUser: User
     private lateinit var user: User
     private lateinit var imageViewButtonCancel: ImageView
     private lateinit var textViewType: TextView
@@ -22,8 +22,8 @@ class OutgoingCall : AppCompatActivity() {
     }
     private fun init() {
         user = (intent.getSerializableExtra("user") as? User)!!
+        destUser = (intent.getSerializableExtra("destUser") as? User)!!
         type = (intent.getSerializableExtra("type") as? String)!!
-        dest = (intent.getSerializableExtra("dest") as? String)!!
         imageViewButtonCancel = findViewById<ImageView>(R.id.imageViewButtonCancel)
         textViewType = findViewById<TextView>(R.id.textViewType)
         textViewFullName = findViewById<TextView>(R.id.textViewFullName)
@@ -31,7 +31,7 @@ class OutgoingCall : AppCompatActivity() {
             textViewType.text = "${resources.getString(R.string.Call)}..."
         else
             textViewType.text = "${resources.getString(R.string.VideoCall)}..."
-        textViewFullName.text = dest
+        textViewFullName.text = "${destUser.firstName} ${destUser.lastName}"
         buttonCancel()
     }
     private fun buttonCancel() { imageViewButtonCancel.setOnClickListener{ onBackPressed() } }

@@ -41,8 +41,8 @@
     <string name="Cancel">Cancel</string>
     <string name="VideoCall">Video Calling</string>
     <!-- IncomingCall Page -->
-    <string name="Decline">Decline</string>
     <string name="Accept">Accept</string>
+    <string name="Reject">Reject</string>
     <!-- Arrays -->
     <string-array name="Main">
         <item>@string/SignIn</item>

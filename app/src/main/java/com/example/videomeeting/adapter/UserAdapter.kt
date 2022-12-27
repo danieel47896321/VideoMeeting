@@ -7,11 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.videomeeting.R
 import com.example.videomeeting.myClass.User
-import com.example.videomeeting.user.IncomingCall
 import com.example.videomeeting.user.OutgoingCall
 
 class UserAdapter (noteList: ArrayList<User>, curUser: User) : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
@@ -28,13 +26,13 @@ class UserAdapter (noteList: ArrayList<User>, curUser: User) : RecyclerView.Adap
     override fun onBindViewHolder(holder: UserAdapter.ViewHolder, position: Int) {
         holder.userFullName.text = "${list[position].firstName} ${list[position].lastName}"
         holder.userEmail.text = list[position].email
-        holder.imageCall.setOnClickListener { outGoingCall(holder, "Call", list[position].firstName + " " +list[position].lastName) }
-        holder.imageVideo.setOnClickListener { outGoingCall(holder,"Video", list[position].firstName + " " +list[position].lastName) }
+        holder.imageCall.setOnClickListener { outGoingCall(holder, "Call", list[position]) }
+        holder.imageVideo.setOnClickListener { outGoingCall(holder,"Video", list[position]) }
     }
-    private fun outGoingCall(holder: UserAdapter.ViewHolder,type: String, dest: String){
+    private fun outGoingCall(holder: UserAdapter.ViewHolder,type: String, destUser: User){
         val intent = Intent(holder.itemView.context, OutgoingCall::class.java)
         intent.putExtra("type", type)
-        intent.putExtra("dest", dest)
+        intent.putExtra("destUser", destUser)
         intent.putExtra("user", user)
         holder.itemView.context.startActivity(intent)
         (holder.itemView.context as Activity).finish()

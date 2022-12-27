@@ -39,9 +39,9 @@
     <string name="AreYouSure">האם אתה בטוח שברצונך להתנתק?</string>
     <!-- OutgoingCall Page -->
     <string name="Call">מחייג</string>
-    <string name="Cancel">ביטול</string>
+    <string name="Cancel">בטל</string>
     <string name="VideoCall">שיחת וידיאו</string>
     <!-- IncomingCall Page -->
-    <string name="Decline">דחה</string>
     <string name="Accept">קבל</string>
+    <string name="Reject">דחה</string>
 </resources>
