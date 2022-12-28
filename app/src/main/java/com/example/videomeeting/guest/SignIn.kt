@@ -54,15 +54,17 @@ class SignIn : Fragment() {
             checkValues()
             if(textInputLayoutEmail.editText?.text?.isEmpty() == false && isEmailValid(textInputLayoutEmail.editText?.text?.toString()) &&
                 textInputLayoutPassword.editText?.text?.isEmpty() == false && textInputLayoutPassword.editText?.text?.length!! > 5){
+                loading = Loading(myView.context)
                 signInButton()
             }
         }
     }
     private fun signInButton() {
         firebaseAuth.signInWithEmailAndPassword(textInputLayoutEmail.editText?.text.toString(), textInputLayoutPassword.editText?.text.toString()).addOnCompleteListener { task ->
-            loading = Loading(myView.context)
             if(task.isSuccessful) {
-                if(firebaseAuth.currentUser!!.isEmailVerified) getUser() else {
+                if(firebaseAuth.currentUser!!.isEmailVerified)
+                    getUser()
+                else {
                     PopUpMSG(myView.context, resources.getString(R.string.SignIn), resources.getString(R.string.CheckEmailVerify))
                     loading.stop()
                 }

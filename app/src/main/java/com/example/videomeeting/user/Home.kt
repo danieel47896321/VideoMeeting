@@ -8,9 +8,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.videomeeting.MainActivity
 import com.example.videomeeting.R
 import com.example.videomeeting.adapter.UserAdapter
-import com.example.videomeeting.guest.VideoMeeting
 import com.example.videomeeting.myClass.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -19,14 +19,14 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.messaging.FirebaseMessaging
 
-
 class Home : AppCompatActivity() {
     private lateinit var backIcon: ImageView
     private lateinit var title: TextView
     private lateinit var textViewFullName: TextView
     private lateinit var textViewEmail: TextView
-    private lateinit var user: User
+    private var user = User()
     private lateinit var recyclerView : RecyclerView
+    private val firebaseAuth = FirebaseAuth.getInstance()
     private var userList = ArrayList<User>()
     private val firebaseDatabase = FirebaseDatabase.getInstance("https://videomeeting-86807-default-rtdb.europe-west1.firebasedatabase.app")
     private val databaseReference = firebaseDatabase.reference.child("Users")
@@ -46,7 +46,7 @@ class Home : AppCompatActivity() {
         backIcon.setImageResource(R.drawable.signout)
         val fullName = "${user.firstName} ${user.lastName}"
         textViewFullName.text = fullName
-        textViewEmail.text = user.email
+        textViewEmail.text = firebaseAuth.currentUser?.email
         setToken()
         backIcon()
         setUsers()
@@ -72,7 +72,7 @@ class Home : AppCompatActivity() {
                     for (note in snapshot.children) {
                         val newUser = note.getValue(User::class.java)
                         if (newUser != null) {
-                            if(newUser.uid != user.uid)
+                            if(newUser.uid != user.uid )
                                 userList.add(newUser)
                         }
                     }
@@ -96,7 +96,7 @@ class Home : AppCompatActivity() {
                 val firebaseAuth = FirebaseAuth.getInstance()
                 if(firebaseAuth.currentUser != null)
                     firebaseAuth.signOut()
-                startActivity(Intent(this, VideoMeeting::class.java))
+                startActivity(Intent(this, MainActivity::class.java))
                 finish()
             }.setNegativeButton(resources.getString(R.string.No)) { _, _ -> }.show()
     }

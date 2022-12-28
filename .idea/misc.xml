@@ -9,9 +9,11 @@
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/drawable/background_call.xml" value="0.22" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/drawable/cancel.xml" value="0.3005" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/drawable/email.xml" value="0.196" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/drawable/main_background.xml" value="0.2235" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/drawable/password.xml" value="0.196" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/drawable/person.xml" value="0.196" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/drawable/reject_background.xml" value="0.3005" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/drawable/vm_launcher_background.xml" value="0.3005" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/activity_incoming_call.xml" value="0.25" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/activity_main.xml" value="0.25" />
@@ -22,6 +24,8 @@
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/fragment_sign_in.xml" value="0.25" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/header.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/user_view.xml" value="0.5" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/mipmap-anydpi-v26/videomeeting_launcher_round.xml" value="0.283" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/mipmap-anydpi-v26/vm_launcher.xml" value="0.3005" />
       </map>
     </option>
   </component>
