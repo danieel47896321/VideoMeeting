@@ -27,7 +27,6 @@ class SignIn : Fragment() {
     private lateinit var textInputLayoutPassword:TextInputLayout
     private lateinit var buttonSignIn: Button
     private lateinit var loading: Loading
-    private lateinit var user: User
     private val firebaseDatabase = FirebaseDatabase.getInstance("https://videomeeting-86807-default-rtdb.europe-west1.firebasedatabase.app")
     private val databaseReference = firebaseDatabase.reference.child("Users")
     private var firebaseAuth = FirebaseAuth.getInstance()
@@ -35,10 +34,6 @@ class SignIn : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         myView = inflater.inflate(R.layout.fragment_sign_in, container, false)
         firebaseAuth = FirebaseAuth.getInstance()
-        if (firebaseAuth.currentUser != null && firebaseAuth.currentUser!!.isEmailVerified) {
-            loading = Loading(myView.context)
-            getUser()
-        }
         textInputLayoutEmail = myView.findViewById<TextInputLayout>(R.id.textInputLayoutEmail)
         textInputLayoutPassword = myView.findViewById<TextInputLayout>(R.id.textInputLayoutPassword)
         buttonSignIn = myView.findViewById<Button>(R.id.buttonSignIn)
@@ -47,26 +42,6 @@ class SignIn : Fragment() {
         signInCheck()
         resetPasswordButton()
         return myView
-    }
-    private fun getUser() {
-        if (firebaseAuth.currentUser != null) {
-            databaseReference.child(firebaseAuth.currentUser!!.uid).addValueEventListener(object : ValueEventListener {
-                    override fun onDataChange(snapshot: DataSnapshot) {
-                        loading.stop()
-                        val user = snapshot.getValue(User::class.java)
-                        moveToHome(user)
-                    }
-                    override fun onCancelled(error: DatabaseError) {}
-                })
-        }
-    }
-    private fun moveToHome(user: User?) {
-        if (activity != null) {
-            val intent = Intent(activity, com.example.videomeeting.user.Home::class.java)
-            intent.putExtra("user", user)
-            startActivity(intent)
-            activity?.finish()
-        }
     }
     private fun endIcon() {
         textInputLayoutEmail.setEndIconOnClickListener{
@@ -93,6 +68,26 @@ class SignIn : Fragment() {
                 }
             }else
                 checkEmailExists()
+        }
+    }
+    private fun getUser() {
+        if (firebaseAuth.currentUser != null) {
+            databaseReference.child(firebaseAuth.currentUser!!.uid).addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    loading.stop()
+                    val user = snapshot.getValue(User::class.java)
+                    moveToHome(user)
+                }
+                override fun onCancelled(error: DatabaseError) {}
+            })
+        }
+    }
+    private fun moveToHome(user: User?) {
+        if (activity != null) {
+            val intent = Intent(activity, com.example.videomeeting.user.Home::class.java)
+            intent.putExtra("user", user)
+            startActivity(intent)
+            activity?.finish()
         }
     }
     private fun checkEmailExists() {

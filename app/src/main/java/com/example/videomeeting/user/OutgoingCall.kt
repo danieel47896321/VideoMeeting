@@ -1,14 +1,13 @@
 package com.example.videomeeting.user
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.videomeeting.R
 import com.example.videomeeting.myClass.User
-import com.google.firebase.messaging.FirebaseMessaging
+import com.google.firebase.installations.InstallationTokenResult.builder
 
 class OutgoingCall : AppCompatActivity() {
     private lateinit var type: String
@@ -38,7 +37,9 @@ class OutgoingCall : AppCompatActivity() {
         buttonCancel()
     }
     private fun setNewCall(){
+        if( type == "Call"){
 
+        }
     }
     private fun buttonCancel() { imageViewButtonCancel.setOnClickListener{ onBackPressed() } }
     override fun onBackPressed() {

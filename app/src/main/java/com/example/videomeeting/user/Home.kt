@@ -8,9 +8,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.videomeeting.MainActivity
 import com.example.videomeeting.R
 import com.example.videomeeting.adapter.UserAdapter
+import com.example.videomeeting.guest.VideoMeeting
 import com.example.videomeeting.myClass.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -30,7 +30,6 @@ class Home : AppCompatActivity() {
     private var userList = ArrayList<User>()
     private val firebaseDatabase = FirebaseDatabase.getInstance("https://videomeeting-86807-default-rtdb.europe-west1.firebasedatabase.app")
     private val databaseReference = firebaseDatabase.reference.child("Users")
-    private var firebaseAuth = FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -55,7 +54,6 @@ class Home : AppCompatActivity() {
     private fun setToken(){
         if(user.token == "Token") { //no token yet
             FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
-                if (!task.isSuccessful) { }
                 if (task.result != null) {
                     val token: String = task.result
                     user.token = token
@@ -98,7 +96,7 @@ class Home : AppCompatActivity() {
                 val firebaseAuth = FirebaseAuth.getInstance()
                 if(firebaseAuth.currentUser != null)
                     firebaseAuth.signOut()
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, VideoMeeting::class.java))
                 finish()
             }.setNegativeButton(resources.getString(R.string.No)) { _, _ -> }.show()
     }
