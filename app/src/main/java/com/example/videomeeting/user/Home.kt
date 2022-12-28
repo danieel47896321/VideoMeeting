@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.videomeeting.MainActivity
 import com.example.videomeeting.R
 import com.example.videomeeting.adapter.UserAdapter
+import com.example.videomeeting.guest.VideoMeeting
 import com.example.videomeeting.myClass.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -96,7 +97,7 @@ class Home : AppCompatActivity() {
                 val firebaseAuth = FirebaseAuth.getInstance()
                 if(firebaseAuth.currentUser != null)
                     firebaseAuth.signOut()
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, VideoMeeting::class.java))
                 finish()
             }.setNegativeButton(resources.getString(R.string.No)) { _, _ -> }.show()
     }
