@@ -1,4 +1,4 @@
-package com.example.videomeeting.adapter
+package com.example.videomeeting.myAdapters
 
 import android.app.Activity
 import android.content.Intent
@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.videomeeting.R
 import com.example.videomeeting.myClass.User
-import com.example.videomeeting.user.OutgoingCall
+import com.example.videomeeting.userActivitys.OutgoingCall
 
 class UserAdapter (noteList: ArrayList<User>, curUser: User) : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
     private var list = ArrayList<User>()

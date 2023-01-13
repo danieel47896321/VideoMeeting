@@ -1,11 +1,10 @@
-package com.example.videomeeting.guest
+package com.example.videomeeting.guestActivitys
 import android.os.Bundle
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.videomeeting.myClass.Loading
 import com.example.videomeeting.myClass.PopUpMSG
@@ -15,7 +14,6 @@ import com.example.videomeeting.R
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.messaging.FirebaseMessaging
 
 class CreateAccount : Fragment() {
     private lateinit var textInputLayoutFirstName: TextInputLayout

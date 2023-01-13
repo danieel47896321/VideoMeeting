@@ -3,43 +3,31 @@ package com.example.videomeeting
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.videomeeting.guest.VideoMeeting
-import com.example.videomeeting.myClass.Loading
+import androidx.lifecycle.ViewModelProvider
+import com.example.videomeeting.controller.MainController
+import com.example.videomeeting.guestActivitys.VideoMeeting
+import com.example.videomeeting.model.MainModel
 import com.example.videomeeting.myClass.User
-import com.example.videomeeting.user.Home
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.example.videomeeting.userActivitys.Home
 
 class MainActivity : AppCompatActivity() {
-    private val firebaseDatabase = FirebaseDatabase.getInstance("https://videomeeting-86807-default-rtdb.europe-west1.firebasedatabase.app")
-    private val databaseReference = firebaseDatabase.reference.child("Users")
-    private val firebaseAuth = FirebaseAuth.getInstance()
+    private lateinit var mainController: MainController
+    private lateinit var mainModel: MainModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         init()
     }
-    private fun init(){
-        if(firebaseAuth.currentUser != null && firebaseAuth.currentUser!!.isEmailVerified) {
-            getUser()
-        }else{
-            startActivity(Intent(this, VideoMeeting::class.java))
-            finish()
-        }
+    private fun init() {
+        mainModel = ViewModelProvider(this)[MainModel::class.java]
+        mainController = MainController(mainModel, this)
+        mainController.checkCurrentUser()
     }
-    private fun getUser() {
-        databaseReference.child(firebaseAuth.currentUser!!.uid).addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                val user = snapshot.getValue(User::class.java)
-                moveToHome(user)
-            }
-            override fun onCancelled(error: DatabaseError) { }
-        })
+    fun videoMeetingPage() {
+        startActivity(Intent(this, VideoMeeting::class.java))
+        finish()
     }
-    private fun moveToHome(user: User?) {
+    fun homePage(user: User) {
         val intent = Intent(this, Home::class.java)
         intent.putExtra("user", user)
         startActivity(intent)

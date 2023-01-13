@@ -16,21 +16,19 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".guest.VideoMeeting"
+            android:name=".guestActivitys.VideoMeeting"
             android:exported="false" />
         <activity
-            android:name=".user.OutgoingCall"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".user.IncomingCall"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".user.Home"
+            android:name=".userActivitys.OutgoingCall"
             android:exported="false" />
         <activity
-            android:name=".guest.ResetPassword"
+            android:name=".userActivitys.IncomingCall"
+            android:exported="false" />
+        <activity
+            android:name=".userActivitys.Home"
+            android:exported="false" />
+        <activity
+            android:name=".guestActivitys.ResetPassword"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

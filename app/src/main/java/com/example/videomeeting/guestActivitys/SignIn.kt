@@ -1,4 +1,4 @@
-package com.example.videomeeting.guest
+package com.example.videomeeting.guestActivitys
 
 import android.content.Intent
 import android.os.Bundle
@@ -86,7 +86,7 @@ class SignIn : Fragment() {
     }
     private fun moveToHome(user: User?) {
         if (activity != null) {
-            val intent = Intent(activity, com.example.videomeeting.user.Home::class.java)
+            val intent = Intent(activity, com.example.videomeeting.userActivitys.Home::class.java)
             intent.putExtra("user", user)
             startActivity(intent)
             activity?.finish()
