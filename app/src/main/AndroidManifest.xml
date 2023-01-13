@@ -16,7 +16,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".guestActivitys.VideoMeeting"
+            android:name=".guestActivity.VideoMeeting"
             android:exported="false" />
         <activity
             android:name=".userActivitys.OutgoingCall"
@@ -28,7 +28,7 @@
             android:name=".userActivitys.Home"
             android:exported="false" />
         <activity
-            android:name=".guestActivitys.ResetPassword"
+            android:name=".guestActivity.ResetPassword"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -2,7 +2,7 @@ package com.example.videomeeting.myClass
 
 import java.io.Serializable
 
-class User : Serializable {
+class User: Serializable {
     var uid = "Uid"
     var token = "Token"
     var email = "test@email.com"

@@ -4,9 +4,9 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.videomeeting.guestActivitys.CreateAccount
-import com.example.videomeeting.guestActivitys.SignIn
-import com.example.videomeeting.guestActivitys.VideoMeeting
+import com.example.videomeeting.guestActivity.CreateAccount
+import com.example.videomeeting.guestActivity.SignIn
+import com.example.videomeeting.guestActivity.VideoMeeting
 import com.example.videomeeting.model.VideoMeetingModel
 
 class VideoMeetingController(var videoMeetingModel: VideoMeetingModel, var view: VideoMeeting) {

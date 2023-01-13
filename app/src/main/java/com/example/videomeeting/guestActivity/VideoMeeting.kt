@@ -1,4 +1,4 @@
-package com.example.videomeeting.guestActivitys
+package com.example.videomeeting.guestActivity
 
 import android.os.Bundle
 import android.widget.ImageView

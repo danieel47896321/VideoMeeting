@@ -4,8 +4,8 @@ import android.util.Patterns
 import android.view.View
 import com.example.videomeeting.MainActivity
 import com.example.videomeeting.R
-import com.example.videomeeting.guestActivitys.ResetPassword
-import com.example.videomeeting.guestActivitys.VideoMeeting
+import com.example.videomeeting.guestActivity.ResetPassword
+import com.example.videomeeting.guestActivity.VideoMeeting
 import com.example.videomeeting.model.ResetPasswordModel
 import com.example.videomeeting.myClass.PopUpMSG
 import com.google.firebase.auth.FirebaseAuth
@@ -21,7 +21,7 @@ class ResetPasswordController(var resetPasswordModel: ResetPasswordModel, var vi
     fun endIcon() {
         view.clearText("")
     }
-    fun buttonFinish(email: String) {
+    private fun buttonFinish(email: String) {
         if (!isEmailValid(email)) {
             view.setEmailHelperText(view.resources.getString(R.string.InvalidEmail))
         } else {

@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.videomeeting.R
 import com.example.videomeeting.myAdapters.UserAdapter
-import com.example.videomeeting.guestActivitys.VideoMeeting
+import com.example.videomeeting.guestActivity.VideoMeeting
 import com.example.videomeeting.myClass.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot

@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.videomeeting.controller.MainController
-import com.example.videomeeting.guestActivitys.VideoMeeting
+import com.example.videomeeting.guestActivity.VideoMeeting
 import com.example.videomeeting.model.MainModel
 import com.example.videomeeting.myClass.User
 import com.example.videomeeting.userActivitys.Home
