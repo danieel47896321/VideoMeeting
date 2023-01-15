@@ -43,9 +43,6 @@ class CreateAccount : Fragment() {
         createAccountCheck()
         return myView
     }
-    fun signOut() {
-        FirebaseAuth.getInstance().signOut()
-    }
     private fun endIcon(){
         textInputLayoutFirstName.setEndIconOnClickListener {
             clearText(textInputLayoutFirstName)

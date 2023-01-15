@@ -10,7 +10,7 @@ import com.example.videomeeting.model.CreateAccountModel
 class CreateAccountController(var createAccountModel: CreateAccountModel, var view: CreateAccount) {
     fun signOut() {
         if (createAccountModel.getAuth().currentUser != null) {
-            view.signOut()
+            createAccountModel.getAuth().signOut()
         }
     }
     private fun checkInput(firstName: String, lastName: String, email: String, password: String, passwordConfirm: String): Boolean {
