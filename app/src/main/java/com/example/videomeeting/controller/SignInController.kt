@@ -8,7 +8,9 @@ import com.example.videomeeting.model.SignInModel
 import com.example.videomeeting.myClass.User
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.messaging.FirebaseMessaging
 
 class SignInController(var signInModel: SignInModel, var view: SignIn) {
     fun buttonSignIn(email: String, password: String) {
@@ -21,7 +23,26 @@ class SignInController(var signInModel: SignInModel, var view: SignIn) {
                             override fun onDataChange(snapshot: DataSnapshot) {
                                 view.setProgressBar(View.GONE)
                                 val user = snapshot.getValue(User::class.java)
-                                view.moveToHome(user)
+                                if (user != null) {
+                                    if(user.token == "Token"){
+                                        FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
+                                            if (task.result != null) {
+                                                val token: String = task.result
+                                                user.token = token
+                                                val firebaseDatabase = FirebaseDatabase.getInstance("https://videomeeting-86807-default-rtdb.europe-west1.firebasedatabase.app")
+                                                val databaseReference = firebaseDatabase.reference.child("Users")
+                                                databaseReference.child(user.uid).child("token").setValue(token)
+                                                view.setProgressBar(View.GONE)
+                                                view.moveToHome()
+                                            } else {
+                                                view.setProgressBar(View.GONE)
+                                            }
+                                        }
+                                    } else {
+                                        view.setProgressBar(View.GONE)
+                                        view.moveToHome()
+                                    }
+                                }
                             }
                             override fun onCancelled(error: DatabaseError) {
                                 view.setProgressBar(View.GONE)

@@ -6,6 +6,8 @@ import com.example.videomeeting.MainActivity
 import com.example.videomeeting.R
 import com.example.videomeeting.guestActivity.CreateAccount
 import com.example.videomeeting.model.CreateAccountModel
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.UserProfileChangeRequest
 
 class CreateAccountController(var createAccountModel: CreateAccountModel, var view: CreateAccount) {
     fun signOut() {
@@ -76,6 +78,8 @@ class CreateAccountController(var createAccountModel: CreateAccountModel, var vi
                         createAccountModel.getAuth().createUserWithEmailAndPassword(email, password).addOnCompleteListener{ createdAccountTask ->
                             if (createdAccountTask.isSuccessful) {
                                 createAccountModel.getAuth().currentUser!!.sendEmailVerification().addOnCompleteListener {
+                                    val userProfileChangeRequest = UserProfileChangeRequest.Builder().setDisplayName("$firstName $lastName").build()
+                                    createAccountModel.getAuth().currentUser!!.updateProfile(userProfileChangeRequest)
                                     view.setProgressBar(View.GONE)
                                     createAccountModel.getUser().email = email
                                     createAccountModel.getUser().firstName = firstName

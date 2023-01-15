@@ -16,7 +16,8 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/userImage"
+            android:contentDescription="@string/UserImage"
+            android:id="@+id/imageViewUser"
             android:layout_width="70dp"
             android:layout_height="0dp"
             android:src="@drawable/person"
@@ -24,8 +25,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:contentDescription="@string/Status"
+            android:id="@+id/imageViewStatus"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/offline"
+            app:layout_constraintStart_toStartOf="@+id/imageViewUser"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
-            android:id="@+id/userFullName"
+            android:id="@+id/textViewFullName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -33,26 +45,26 @@
             android:text="@string/FirstName"
             android:textColor="@color/default_color"
             android:textSize="22sp"
-            app:layout_constraintEnd_toStartOf="@+id/imageCall"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewCall"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/userImage"
+            app:layout_constraintStart_toEndOf="@+id/imageViewUser"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/userEmail"
+            android:id="@+id/textViewEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/Email"
             android:textColor="@color/default_color"
             android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@+id/userFullName"
-            app:layout_constraintStart_toEndOf="@+id/userImage"
-            app:layout_constraintTop_toBottomOf="@+id/userFullName" />
-
+            app:layout_constraintEnd_toEndOf="@+id/textViewFullName"
+            app:layout_constraintStart_toEndOf="@+id/imageViewUser"
+            app:layout_constraintTop_toBottomOf="@+id/textViewFullName" />
 
         <ImageView
-            android:id="@+id/imageCall"
+            android:contentDescription="@string/Call"
+            android:id="@+id/imageViewCall"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
@@ -61,11 +73,12 @@
             android:foreground="?android:attr/selectableItemBackground"
             android:src="@drawable/phone"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageVideo"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewVideo"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageVideo"
+            android:contentDescription="@string/VideoCall"
+            android:id="@+id/imageViewVideo"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginEnd="8dp"

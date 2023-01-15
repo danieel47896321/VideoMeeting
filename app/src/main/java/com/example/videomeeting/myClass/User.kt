@@ -8,6 +8,7 @@ class User: Serializable {
     var email = "test@email.com"
     var firstName = "FirstName"
     var lastName = "LastName"
+    var status = "Offline"
     constructor() {}
     constructor(email: String, firstName: String, lastName: String) {
         this.email = email

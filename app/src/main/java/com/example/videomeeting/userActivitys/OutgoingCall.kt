@@ -28,7 +28,7 @@ class OutgoingCall : AppCompatActivity() {
         init()
     }
     private fun init() {
-        user = (intent.getSerializableExtra("user") as? User)!!
+       // user = (intent.getSerializableExtra("user") as? User)!!
         destUser = (intent.getSerializableExtra("destUser") as? User)!!
         type = (intent.getSerializableExtra("type") as? String)!!
         imageViewButtonCancel = findViewById<ImageView>(R.id.imageViewButtonCancel)
@@ -65,9 +65,7 @@ class OutgoingCall : AppCompatActivity() {
     }
     private fun buttonCancel() { imageViewButtonCancel.setOnClickListener{ onBackPressed() } }
     override fun onBackPressed() {
-        val intent = Intent(this, Home::class.java)
-        intent.putExtra("user", user)
-        startActivity(intent)
+        startActivity(Intent(this, Home::class.java))
         finish()
     }
 }

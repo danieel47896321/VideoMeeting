@@ -6,98 +6,62 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.videomeeting.R
-import com.example.videomeeting.myAdapters.UserAdapter
+import com.example.videomeeting.adapter.HomeAdapter
+import com.example.videomeeting.controller.HomeController
 import com.example.videomeeting.guestActivity.VideoMeeting
+import com.example.videomeeting.model.HomeModel
 import com.example.videomeeting.myClass.User
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-import com.google.firebase.messaging.FirebaseMessaging
 
 class Home : AppCompatActivity() {
+    private lateinit var homeModel: HomeModel
+    private lateinit var homeController: HomeController
     private lateinit var backIcon: ImageView
     private lateinit var title: TextView
     private lateinit var textViewFullName: TextView
     private lateinit var textViewEmail: TextView
-    private var user = User()
     private lateinit var recyclerView : RecyclerView
-    private val firebaseAuth = FirebaseAuth.getInstance()
-    private var userList = ArrayList<User>()
-    private val firebaseDatabase = FirebaseDatabase.getInstance("https://videomeeting-86807-default-rtdb.europe-west1.firebasedatabase.app")
-    private val databaseReference = firebaseDatabase.reference.child("Users")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         init()
     }
     private fun init() {
-        user = (intent.getSerializableExtra("user") as? User)!!
+        homeModel = ViewModelProvider(this)[HomeModel::class.java]
+        homeController = HomeController(homeModel, this)
         recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         backIcon = findViewById<ImageView>(R.id.backIcon)
         title = findViewById<TextView>(R.id.title)
         textViewFullName = findViewById<TextView>(R.id.textViewFullName)
         textViewEmail = findViewById<TextView>(R.id.textViewEmail)
-        title.setText(R.string.Home)
         backIcon.setImageResource(R.drawable.signout)
-        val fullName = "${user.firstName} ${user.lastName}"
-        textViewFullName.text = fullName
-        textViewEmail.text = firebaseAuth.currentUser?.email
-        setToken()
+        homeController.setView()
         backIcon()
-        setUsers()
+        setStatus()
     }
-    private fun setToken(){
-        if(user.token == "Token") { //no token yet
-            FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
-                if (task.result != null) {
-                    val token: String = task.result
-                    user.token = token
-                    val firebaseDatabase = FirebaseDatabase.getInstance("https://videomeeting-86807-default-rtdb.europe-west1.firebasedatabase.app")
-                    val databaseReference = firebaseDatabase.reference.child("Users")
-                    databaseReference.child(user.uid).child("token").setValue(token)
-                }
-            }
-        }
+    fun updateView(title: Int, fullName: String?, email: String?) {
+        this.title.setText(title)
+        textViewFullName.text = fullName
+        textViewEmail.text = email
     }
-    private fun setUsers() {
-        databaseReference.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                userList.clear()
-                if (snapshot.exists()) {
-                    for (note in snapshot.children) {
-                        val newUser = note.getValue(User::class.java)
-                        if (newUser != null) {
-                            if(newUser.uid != user.uid )
-                                userList.add(newUser)
-                        }
-                    }
-                    showUsers()
-                }
-            }
-            override fun onCancelled(error: DatabaseError) {}
-        })
-    }
-    private fun showUsers(){
-        val userAdapter = UserAdapter(userList,user)
-        recyclerView.layoutManager = GridLayoutManager(this,1)
-        recyclerView.adapter = userAdapter
+    fun showUsers(users: ArrayList<User>) {
+        recyclerView.adapter = HomeAdapter(users)
     }
     private fun backIcon() { backIcon.setOnClickListener{ onBackPressed() } }
     override fun onBackPressed() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(resources.getString(R.string.SignOut))
-            .setMessage(resources.getString(R.string.AreYouSure)).setCancelable(true)
-            .setPositiveButton(resources.getString(R.string.Yes)) { _, _ ->
-                val firebaseAuth = FirebaseAuth.getInstance()
-                if(firebaseAuth.currentUser != null)
-                    firebaseAuth.signOut()
+            .setMessage(resources.getString(R.string.AreYouSure)).setCancelable(true).setPositiveButton(resources.getString(R.string.Yes)) { _, _ ->
+                homeController.signOut()
                 startActivity(Intent(this, VideoMeeting::class.java))
                 finish()
-            }.setNegativeButton(resources.getString(R.string.No)) { _, _ -> }.show()
+            }.setCancelable(false).setNegativeButton(resources.getString(R.string.No)) { _, _ -> }.show()
+    }
+    private fun setStatus(){
+        if(homeModel.getAuth().uid != null)
+            homeModel.getData().child(homeModel.getAuth().uid!!).child("status").setValue("Online")
+        homeModel.getData().child(homeModel.getAuth().uid!!).child("status").onDisconnect().setValue("Offline")
     }
 }

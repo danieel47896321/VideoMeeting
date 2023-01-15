@@ -55,10 +55,8 @@ class SignIn : Fragment() {
             )
         }
     }
-    fun moveToHome(user: User?) {
-        val intent = Intent(activity, com.example.videomeeting.userActivitys.Home::class.java)
-        intent.putExtra("user", user)
-        startActivity(intent)
+    fun moveToHome() {
+        startActivity(Intent(activity, com.example.videomeeting.userActivitys.Home::class.java))
         activity?.finish()
     }
     private fun resetPasswordButton() {
