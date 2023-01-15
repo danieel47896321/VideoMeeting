@@ -19,7 +19,6 @@ class HomeAdapter(private var list: ArrayList<User>) : RecyclerView.Adapter<Home
     }
     override fun onBindViewHolder(holder: HomeAdapter.ViewHolder, position: Int) {
         holder.textViewFullName.text = "${list[position].firstName} ${list[position].lastName}"
-        holder.textViewEmail.text = list[position].email
         if (list[position].status == "Online") {
             holder.imageViewStatus.setImageResource(R.drawable.online)
         } else {
@@ -36,7 +35,6 @@ class HomeAdapter(private var list: ArrayList<User>) : RecyclerView.Adapter<Home
         val intent = Intent(holder.itemView.context, OutgoingCall::class.java)
         intent.putExtra("type", type)
         intent.putExtra("destUser", destUser)
-        //intent.putExtra("user", user)
         holder.itemView.context.startActivity(intent)
         (holder.itemView.context as Activity).finish()
     }
@@ -45,13 +43,11 @@ class HomeAdapter(private var list: ArrayList<User>) : RecyclerView.Adapter<Home
     }
     inner class ViewHolder(view : View) : RecyclerView.ViewHolder(view){
         var textViewFullName : TextView
-        var textViewEmail : TextView
         var imageViewCall : ImageView
         var imageViewVideo : ImageView
         var imageViewStatus : ImageView
         init {
             textViewFullName = view.findViewById(R.id.textViewFullName)
-            textViewEmail = view.findViewById(R.id.textViewEmail)
             imageViewCall = view.findViewById(R.id.imageViewCall)
             imageViewVideo = view.findViewById(R.id.imageViewVideo)
             imageViewStatus = view.findViewById(R.id.imageViewStatus)

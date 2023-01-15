@@ -21,7 +21,6 @@ class Home : AppCompatActivity() {
     private lateinit var backIcon: ImageView
     private lateinit var title: TextView
     private lateinit var textViewFullName: TextView
-    private lateinit var textViewEmail: TextView
     private lateinit var recyclerView : RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,16 +34,14 @@ class Home : AppCompatActivity() {
         backIcon = findViewById<ImageView>(R.id.backIcon)
         title = findViewById<TextView>(R.id.title)
         textViewFullName = findViewById<TextView>(R.id.textViewFullName)
-        textViewEmail = findViewById<TextView>(R.id.textViewEmail)
         backIcon.setImageResource(R.drawable.signout)
         homeController.setView()
         backIcon()
         setStatus()
     }
-    fun updateView(title: Int, fullName: String?, email: String?) {
+    fun updateView(title: Int, fullName: String?) {
         this.title.setText(title)
         textViewFullName.text = fullName
-        textViewEmail.text = email
     }
     fun showUsers(users: ArrayList<User>) {
         recyclerView.adapter = HomeAdapter(users)

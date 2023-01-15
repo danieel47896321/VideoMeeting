@@ -12,8 +12,7 @@ class HomeController(var homeModel: HomeModel, var view: Home) {
     fun setView() {
         val title = R.string.Home
         val fullName = homeModel.getAuth().currentUser?.displayName
-        val email = homeModel.getAuth().currentUser?.email
-        view.updateView(title, fullName, email)
+        view.updateView(title, fullName)
         setUsers()
     }
     private fun setUsers() {
