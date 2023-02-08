@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.videomeeting.R
 import com.example.videomeeting.myClass.User
-import com.example.videomeeting.userActivitys.OutgoingCall
+import com.example.videomeeting.userActivity.OutgoingCall
 
 class HomeAdapter(private var list: ArrayList<User>) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeAdapter.ViewHolder {

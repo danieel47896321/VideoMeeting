@@ -48,7 +48,7 @@ class ResetPasswordController(var resetPasswordModel: ResetPasswordModel, var vi
     }
     private fun isEmailValid(email: String?): Boolean { return Patterns.EMAIL_ADDRESS.matcher(email).matches() }
     fun buttonFinish(length: Int, email: String) {
-        if(length > 0){
+        if(length > 0) {
             buttonFinish(email)
         } else {
             view.setEmailHelperText(view.resources.getString(R.string.Required))

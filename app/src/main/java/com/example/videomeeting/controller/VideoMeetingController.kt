@@ -1,6 +1,5 @@
 package com.example.videomeeting.controller
 
-import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
@@ -11,7 +10,6 @@ import com.example.videomeeting.model.VideoMeetingModel
 
 class VideoMeetingController(var videoMeetingModel: VideoMeetingModel, var view: VideoMeeting) {
     fun setView(){
-        view.setHeader("", View.GONE)
         view.setPager(ViewPagerAdapter(view, videoMeetingModel.getTitles()), getTitles())
     }
     private fun getTitles(): Array<String?> {

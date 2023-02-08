@@ -1,6 +1,7 @@
 package com.example.videomeeting.guestActivity
 
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -24,18 +25,15 @@ class VideoMeeting : AppCompatActivity() {
         setContentView(R.layout.activity_video_meeting)
         init()
     }
-    private fun init(){
+    private fun init() {
         videoMeetingModel = ViewModelProvider(this)[VideoMeetingModel::class.java]
         videoMeetingController = VideoMeetingController(videoMeetingModel, this)
         title = findViewById<TextView>(R.id.title)
         backIcon = findViewById<ImageView>(R.id.backIcon)
+        backIcon.visibility = View.GONE
         tabLayout = findViewById(R.id.tabLayout)
         viewPager2 = findViewById(R.id.viewPager2)
         videoMeetingController.setView()
-    }
-    fun setHeader(text: String, view: Int) {
-        title.text = text
-        backIcon.visibility = view
     }
     fun setPager(pagerAdapter: VideoMeetingController.ViewPagerAdapter, titles: Array<String?>) {
         viewPager2.adapter = pagerAdapter

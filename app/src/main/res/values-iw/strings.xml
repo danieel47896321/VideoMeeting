@@ -33,7 +33,13 @@
     <string name="ResetLink" translatable="true">קישור לאיפוס הסיסמה נשלח לאימייל.</string>
     <!-- Home Page -->
     <string name="Home">ראשי</string>
+    <string name="Profile">פרופיל</string>
+    <string name="History">היסטוריה</string>
     <string name="SignOut">התנתק</string>
+    <string name="EditProfile">ערוך פרופיל</string>
+    <string name="EmailCannotBeChanged">אימייל (לא ניתן לשינוי)</string>
+    <string name="CompleteEditProfile">הפרופיל עודכן בהצלחה</string>
+    <string name="UseOfSpaces">אסור שימוש ברווחים</string>
     <string name="No">לא</string>
     <string name="Yes">כן</string>
     <string name="AreYouSure">האם אתה בטוח שברצונך להתנתק?</string>

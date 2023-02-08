@@ -64,11 +64,11 @@ class ResetPassword : AppCompatActivity() {
     override fun onBackPressed() {
         startActivity(MainActivity::class.java)
     }
-    fun setProgressBar(view: Int){
+    fun setProgressBar(view: Int) {
         progressBar.visibility = view
     }
     private fun buttonFinish() {
-        buttonFinish.setOnClickListener{
+        buttonFinish.setOnClickListener {
             resetPasswordController.buttonFinish(textInputLayoutEmail.editText?.text?.length!!, textInputLayoutEmail.editText!!.text.toString())
         }
     }

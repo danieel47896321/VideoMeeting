@@ -1,19 +1,12 @@
-package com.example.videomeeting.userActivitys
+package com.example.videomeeting.userActivity
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
 import com.example.videomeeting.R
 import com.example.videomeeting.myClass.User
-import com.example.videomeeting.network.ApiClient
-import com.example.videomeeting.network.ApiService
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class OutgoingCall : AppCompatActivity() {
     private lateinit var type: String

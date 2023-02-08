@@ -14,7 +14,6 @@ import com.example.videomeeting.R
 import com.example.videomeeting.controller.CreateAccountController
 import com.example.videomeeting.model.CreateAccountModel
 import com.google.android.material.textfield.TextInputLayout
-import com.google.firebase.auth.FirebaseAuth
 
 class CreateAccount : Fragment() {
     private lateinit var createAccountModel: CreateAccountModel
@@ -43,14 +42,14 @@ class CreateAccount : Fragment() {
         createAccountCheck()
         return myView
     }
-    private fun endIcon(){
+    private fun endIcon() {
         textInputLayoutFirstName.setEndIconOnClickListener {
             clearText(textInputLayoutFirstName)
         }
         textInputLayoutLastName.setEndIconOnClickListener {
             clearText(textInputLayoutLastName)
         }
-        textInputLayoutEmail.setEndIconOnClickListener{
+        textInputLayoutEmail.setEndIconOnClickListener {
             clearText(textInputLayoutEmail)
         }
     }
@@ -58,7 +57,7 @@ class CreateAccount : Fragment() {
         input.helperText = ""
         input.editText!!.setText("")
     }
-    private fun createAccountCheck(){
+    private fun createAccountCheck() {
         buttonFinish.setOnClickListener {
             createAccountController.buttonFinish(
                 textInputLayoutFirstName.editText?.text.toString(),
@@ -87,7 +86,7 @@ class CreateAccount : Fragment() {
     fun setProgressBar(view: Int) {
         progressBar.visibility = view
     }
-    fun displayMessage(title: String, text: String, dest: Class<MainActivity>?){
+    fun displayMessage(title: String, text: String, dest: Class<MainActivity>?) {
         if (dest == null) {
             PopUpMSG(myView.context, title, text)
         } else {

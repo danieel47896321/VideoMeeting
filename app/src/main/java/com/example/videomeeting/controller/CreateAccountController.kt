@@ -20,12 +20,18 @@ class CreateAccountController(var createAccountModel: CreateAccountModel, var vi
         if (firstName.isEmpty()) {
             view.setFirstNameHelper(view.resources.getString(R.string.Required))
             flag = false
+        } else if(gotSpace(firstName)) {
+            view.setFirstNameHelper(view.resources.getString(R.string.UseOfSpaces))
+            flag = false
         } else {
             view.setFirstNameHelper("")
         }
 
         if (lastName.isEmpty()) {
             view.setLastNameHelper(view.resources.getString(R.string.Required))
+            flag = false
+        } else if(gotSpace(lastName)) {
+            view.setLastNameHelper(view.resources.getString(R.string.UseOfSpaces))
             flag = false
         } else {
             view.setLastNameHelper("")
@@ -103,5 +109,8 @@ class CreateAccountController(var createAccountModel: CreateAccountModel, var vi
     }
     private fun isEmailValid(email: String?): Boolean {
         return Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
+    private fun gotSpace(name: String): Boolean {
+        return name.contains(" ")
     }
 }

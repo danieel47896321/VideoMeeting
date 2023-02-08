@@ -13,4 +13,5 @@
     <color name="blue">#0B57DC</color>
     <color name="blue2">#0979DA</color>
     <color name="default_color">#808080</color>
+    <color name="disable">@color/disable_textinputedittext</color>
 </resources>

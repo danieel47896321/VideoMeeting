@@ -2,12 +2,14 @@ package com.example.videomeeting.guestActivity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.videomeeting.MainActivity
@@ -15,7 +17,7 @@ import com.example.videomeeting.R
 import com.example.videomeeting.controller.SignInController
 import com.example.videomeeting.model.SignInModel
 import com.example.videomeeting.myClass.PopUpMSG
-import com.example.videomeeting.myClass.User
+import com.example.videomeeting.userActivity.Home
 import com.google.android.material.textfield.TextInputLayout
 
 class SignIn : Fragment() {
@@ -48,7 +50,7 @@ class SignIn : Fragment() {
         }
     }
     private fun signInCheck() {
-        buttonSignIn.setOnClickListener{
+        buttonSignIn.setOnClickListener {
             signInController.buttonSignIn(
                 textInputLayoutEmail.editText?.text.toString(),
                 textInputLayoutPassword.editText?.text.toString()
@@ -56,7 +58,9 @@ class SignIn : Fragment() {
         }
     }
     fun moveToHome() {
-        startActivity(Intent(activity, com.example.videomeeting.userActivitys.Home::class.java))
+        Toast.makeText(myView.context, "here1", Toast.LENGTH_SHORT).show()
+        Log.d("here", "here1")
+        startActivity(Intent(activity, Home::class.java))
         activity?.finish()
     }
     private fun resetPasswordButton() {
@@ -65,7 +69,7 @@ class SignIn : Fragment() {
             activity?.finish()
         }
     }
-    fun displayMessage(title: String, text: String, dest: Class<MainActivity>?){
+    fun displayMessage(title: String, text: String, dest: Class<MainActivity>?) {
         if (dest == null) {
             PopUpMSG(myView.context, title, text)
         } else {

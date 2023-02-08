@@ -8,7 +8,7 @@ import com.example.videomeeting.controller.MainController
 import com.example.videomeeting.guestActivity.VideoMeeting
 import com.example.videomeeting.model.MainModel
 import com.example.videomeeting.myClass.User
-import com.example.videomeeting.userActivitys.Home
+import com.example.videomeeting.userActivity.Home
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mainController: MainController

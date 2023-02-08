@@ -19,13 +19,13 @@
             android:name=".guestActivity.VideoMeeting"
             android:exported="false" />
         <activity
-            android:name=".userActivitys.OutgoingCall"
+            android:name=".userActivity.OutgoingCall"
             android:exported="false" />
         <activity
-            android:name=".userActivitys.IncomingCall"
+            android:name=".userActivity.IncomingCall"
             android:exported="false" />
         <activity
-            android:name=".userActivitys.Home"
+            android:name=".userActivity.Home"
             android:exported="false" />
         <activity
             android:name=".guestActivity.ResetPassword"

@@ -1,7 +1,9 @@
 package com.example.videomeeting.controller
 
+import android.util.Log
 import android.util.Patterns
 import android.view.View
+import android.widget.Toast
 import com.example.videomeeting.R
 import com.example.videomeeting.guestActivity.SignIn
 import com.example.videomeeting.model.SignInModel
@@ -11,6 +13,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.messaging.FirebaseMessaging
+import kotlin.coroutines.coroutineContext
 
 class SignInController(var signInModel: SignInModel, var view: SignIn) {
     fun buttonSignIn(email: String, password: String) {
@@ -19,12 +22,12 @@ class SignInController(var signInModel: SignInModel, var view: SignIn) {
             signInModel.getAuth().signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     if (signInModel.getAuth().currentUser!!.isEmailVerified) {
-                        signInModel.getData().child(signInModel.getAuth().currentUser!!.uid).addValueEventListener(object : ValueEventListener {
+                        signInModel.getData().child(signInModel.getAuth().currentUser!!.uid).addListenerForSingleValueEvent(object : ValueEventListener {
                             override fun onDataChange(snapshot: DataSnapshot) {
                                 view.setProgressBar(View.GONE)
                                 val user = snapshot.getValue(User::class.java)
                                 if (user != null) {
-                                    if(user.token == "Token"){
+                                    if(user.token == "Token") {
                                         FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
                                             if (task.result != null) {
                                                 val token: String = task.result
@@ -33,6 +36,7 @@ class SignInController(var signInModel: SignInModel, var view: SignIn) {
                                                 val databaseReference = firebaseDatabase.reference.child("Users")
                                                 databaseReference.child(user.uid).child("token").setValue(token)
                                                 view.setProgressBar(View.GONE)
+                                                Log.d("here", "here2")
                                                 view.moveToHome()
                                             } else {
                                                 view.setProgressBar(View.GONE)
@@ -40,6 +44,7 @@ class SignInController(var signInModel: SignInModel, var view: SignIn) {
                                         }
                                     } else {
                                         view.setProgressBar(View.GONE)
+                                        Log.d("here", "here3")
                                         view.moveToHome()
                                     }
                                 }
