@@ -3,7 +3,7 @@ package com.example.videomeeting.userActivity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
+import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentContainerView
@@ -21,6 +21,7 @@ class Home : AppCompatActivity() {
     private lateinit var homeModel: HomeModel
     private lateinit var homeController: HomeController
     private lateinit var navController: NavController
+    private lateinit var backIcon: ImageView
     private lateinit var fragmentContainerView: FragmentContainerView
     private lateinit var bottomNavigationView: BottomNavigationView
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,14 +30,21 @@ class Home : AppCompatActivity() {
         init()
     }
     private fun init() {
-        Log.d("here", "here4")
         homeModel = ViewModelProvider(this)[HomeModel::class.java]
         homeController = HomeController(homeModel, this)
+        backIcon = findViewById<ImageView>(R.id.backIcon)
+        backIcon.setImageResource(R.drawable.signout)
         bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         fragmentContainerView = findViewById<FragmentContainerView>(R.id.fragmentContainerView)
         navController = findNavController(R.id.fragmentContainerView)
         bottomNavigationView.setupWithNavController(navController)
         homeController.setStatus()
+        setBackIcon()
+    }
+    private fun setBackIcon() {
+        backIcon.setOnClickListener {
+            onBackPressed()
+        }
     }
     override fun onBackPressed() {
         val builder = AlertDialog.Builder(this)

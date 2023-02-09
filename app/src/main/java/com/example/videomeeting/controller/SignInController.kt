@@ -36,7 +36,6 @@ class SignInController(var signInModel: SignInModel, var view: SignIn) {
                                                 val databaseReference = firebaseDatabase.reference.child("Users")
                                                 databaseReference.child(user.uid).child("token").setValue(token)
                                                 view.setProgressBar(View.GONE)
-                                                Log.d("here", "here2")
                                                 view.moveToHome()
                                             } else {
                                                 view.setProgressBar(View.GONE)
@@ -44,7 +43,6 @@ class SignInController(var signInModel: SignInModel, var view: SignIn) {
                                         }
                                     } else {
                                         view.setProgressBar(View.GONE)
-                                        Log.d("here", "here3")
                                         view.moveToHome()
                                     }
                                 }

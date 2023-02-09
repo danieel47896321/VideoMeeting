@@ -22,7 +22,7 @@ class ProfileFragmentController(private var profileFragmentModel: ProfileFragmen
             profileFragmentModel.getAuth().currentUser!!.updateProfile(userProfileChangeRequest)
             profileFragmentModel.getData().child(profileFragmentModel.getAuth().currentUser!!.uid).child("firstName").setValue(firstName)
             profileFragmentModel.getData().child(profileFragmentModel.getAuth().currentUser!!.uid).child("lastName").setValue(lastName)
-            view.displayMessage(view.resources.getString(R.string.EditProfile), view.resources.getString(R.string.CompleteEditProfile), null)
+            Toast.makeText(view.context, view.resources.getString(R.string.CompleteEditProfile), Toast.LENGTH_SHORT).show()
         }
     }
     private fun checkInput(firstName: String, lastName: String): Boolean {
