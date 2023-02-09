@@ -50,6 +50,7 @@
     <string name="AreYouSure">האם אתה בטוח שברצונך להתנתק?</string>
     <string name="Status">סטטוס</string>
     <string name="UserImage">תמונת משתמש</string>
+    <string name="Search">חיפוש</string>
     <!-- Message Page -->
     <string name="Message">הודעה</string>
     <!-- OutgoingCall Page -->

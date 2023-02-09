@@ -66,5 +66,12 @@
     <style name="PositiveButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
         <item name="android:textColor">@color/blue</item>
     </style>
-
+    <style name="EditText_Style_Normal" parent="Widget.AppCompat.EditText">
+        <item name="android:textSize">25sp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColorHint">@color/default_color</item>
+        <item name="android:background">@android:drawable/editbox_background</item>
+    </style>
 </resources>

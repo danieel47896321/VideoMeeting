@@ -1,6 +1,5 @@
 package com.example.videomeeting.controller
 
-import android.widget.Toast
 import com.example.videomeeting.model.HomeFragmentModel
 import com.example.videomeeting.myClass.User
 import com.example.videomeeting.userActivity.homeFragment.HomeFragment
@@ -18,7 +17,11 @@ class HomeFragmentController(var homeFragmentModel: HomeFragmentModel, var view:
                         val theUser = user.getValue(User::class.java)
                         if (theUser != null) {
                             if (theUser.uid != homeFragmentModel.getAuth().uid ) {
-                                homeFragmentModel.getUsers().add(theUser)
+                                if (view.isSearchTextEmpty()){
+                                    homeFragmentModel.getUsers().add(theUser)
+                                } else if(theUser.firstName.toLowerCase().contains(view.searchText().toLowerCase()) || theUser.lastName.toLowerCase().contains(view.searchText().toLowerCase())) {
+                                    homeFragmentModel.getUsers().add(theUser)
+                                }
                             }
                         }
                     }
