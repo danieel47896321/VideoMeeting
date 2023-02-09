@@ -1,22 +1,13 @@
 package com.example.videomeeting.userActivity
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
+import android.widget.Toast
 import androidx.cardview.widget.CardView
-import androidx.fragment.app.FragmentContainerView
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.videomeeting.R
-import com.example.videomeeting.controller.HomeController
-import com.example.videomeeting.guestActivity.VideoMeeting
-import com.example.videomeeting.model.HomeModel
 import com.example.videomeeting.myClass.User
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class Message : AppCompatActivity() {
     private lateinit var userName: TextView
@@ -41,7 +32,9 @@ class Message : AppCompatActivity() {
     }
 
     private fun setBackIcon() {
-        onBackPressed()
+        imageViewBackIcon.setOnClickListener{
+            onBackPressed()
+        }
     }
     override fun onBackPressed() {
        finish()
