@@ -1,7 +1,12 @@
 package com.example.videomeeting.userActivity
 
+import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
@@ -16,6 +21,8 @@ import com.example.videomeeting.controller.HomeController
 import com.example.videomeeting.guestActivity.VideoMeeting
 import com.example.videomeeting.model.HomeModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.io.ByteArrayOutputStream
+import java.io.IOException
 
 class Home : AppCompatActivity() {
     private lateinit var homeModel: HomeModel

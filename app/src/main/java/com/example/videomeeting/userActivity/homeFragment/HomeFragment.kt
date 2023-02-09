@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.videomeeting.R
-import com.example.videomeeting.adapter.HomeAdapter
+import com.example.videomeeting.adapter.HomeFragmentAdapter
 import com.example.videomeeting.controller.HomeFragmentController
 import com.example.videomeeting.model.HomeFragmentModel
 import com.example.videomeeting.myClass.User
@@ -27,6 +27,7 @@ class HomeFragment : Fragment() {
         return myView
     }
     fun showUsers(users: ArrayList<User>) {
-        recyclerView.adapter = HomeAdapter(users)
+        var context = view?.context
+        recyclerView.adapter = HomeFragmentAdapter(users, context)
     }
 }
