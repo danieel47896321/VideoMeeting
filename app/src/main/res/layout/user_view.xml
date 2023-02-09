@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -12,35 +13,51 @@
     app:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:foreground="?android:attr/selectableItemBackground"
         android:padding="6dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
-            android:contentDescription="@string/UserImage"
-            android:id="@+id/imageViewUser"
-            android:layout_width="70dp"
-            android:layout_height="0dp"
-            android:src="@drawable/person"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:contentDescription="@string/Status"
             android:id="@+id/imageViewStatus"
             android:layout_width="12dp"
             android:layout_height="12dp"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="3dp"
+            android:contentDescription="@string/Status"
             android:src="@drawable/offline"
-            app:layout_constraintStart_toStartOf="@+id/imageViewUser"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewUserImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:cardCornerRadius="300dp"
+            android:padding="100dp"
+            android:layout_margin="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageViewUser"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:contentDescription="@string/UserImage"
+                android:scaleType="centerCrop"
+                android:src="@drawable/person"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/textViewFullName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
             android:gravity="center"
             android:text="@string/FirstName"
             android:textColor="@color/default_color"
@@ -48,16 +65,16 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageViewCall"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageViewUser"
+            app:layout_constraintStart_toEndOf="@+id/cardViewUserImage"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:contentDescription="@string/Call"
             android:id="@+id/imageViewCall"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="4dp"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
             android:src="@drawable/phone"
@@ -68,9 +85,9 @@
         <ImageView
             android:contentDescription="@string/VideoCall"
             android:id="@+id/imageViewVideo"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="8dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="4dp"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
             android:src="@drawable/videocam"

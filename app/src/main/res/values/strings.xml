@@ -42,11 +42,15 @@
     <string name="Chats">Chats</string>
     <string name="Camera">Camera</string>
     <string name="Gallery">Gallery</string>
+    <string name="TheUser">The User</string>
+    <string name="HaveNoImage">Have No Image</string>
     <string name="No">No</string>
     <string name="Yes">Yes</string>
     <string name="AreYouSure">Are you sure you want to Sign Out?</string>
     <string name="Status">Status</string>
     <string name="UserImage">User Image</string>
+    <!-- Message Page -->
+    <string name="Message">Message</string>
     <!-- OutgoingCall Page -->
     <string name="Call">Calling</string>
     <string name="Cancel">Cancel</string>

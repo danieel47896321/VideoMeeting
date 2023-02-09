@@ -30,7 +30,6 @@ import com.example.videomeeting.model.ProfileFragmentModel
 import com.google.android.material.textfield.TextInputLayout
 import java.io.ByteArrayOutputStream
 
-
 class ProfileFragment : Fragment() {
     private lateinit var profileFragmentModel: ProfileFragmentModel
     private lateinit var profileFragmentController: ProfileFragmentController
@@ -61,7 +60,6 @@ class ProfileFragment : Fragment() {
         setFullScreenImage()
         return myView
     }
-
     private fun setFullScreenImage() {
         imageViewUserImage.setOnClickListener(View.OnClickListener {
             val context: Context? = myView!!.context
