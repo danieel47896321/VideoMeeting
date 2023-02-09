@@ -14,9 +14,4 @@
         android:id="@+id/chatFragment"
         android:title="@string/Chats"
         android:icon="@drawable/phone" />
-
-    <item
-        android:id="@+id/historyFragment"
-        android:title="@string/History"
-        android:icon="@drawable/history" />
 </menu>

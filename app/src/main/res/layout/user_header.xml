@@ -42,11 +42,9 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewUserImage"
-            android:foreground="?android:attr/selectableItemBackground"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="12dp"
-            android:clickable="true"
             app:cardCornerRadius="300dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageViewBackIcon"
             app:layout_constraintEnd_toStartOf="@+id/userName"

@@ -20,9 +20,4 @@
         android:name="com.example.videomeeting.userActivity.homeFragment.ChatFragment"
         android:label="fragment_chat"
         tools:layout="@layout/fragment_chat" />
-    <fragment
-        android:id="@+id/historyFragment"
-        android:name="com.example.videomeeting.userActivity.homeFragment.HistoryFragment"
-        android:label="fragment_history"
-        tools:layout="@layout/fragment_history" />
 </navigation>
