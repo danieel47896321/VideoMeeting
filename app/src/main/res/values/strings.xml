@@ -40,6 +40,8 @@
     <string name="CompleteEditProfile">The profile has been successfully updated</string>
     <string name="UseOfSpaces">Do not use spaces</string>
     <string name="Chats">Chats</string>
+    <string name="Camera">Camera</string>
+    <string name="Gallery">Gallery</string>
     <string name="No">No</string>
     <string name="Yes">Yes</string>
     <string name="AreYouSure">Are you sure you want to Sign Out?</string>

@@ -5,6 +5,8 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -14,7 +16,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
+import androidx.appcompat.app.AlertDialog
 import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -26,6 +30,7 @@ import com.example.videomeeting.model.ProfileFragmentModel
 import com.google.android.material.textfield.TextInputLayout
 import java.io.ByteArrayOutputStream
 
+
 class ProfileFragment : Fragment() {
     private lateinit var profileFragmentModel: ProfileFragmentModel
     private lateinit var profileFragmentController: ProfileFragmentController
@@ -36,12 +41,14 @@ class ProfileFragment : Fragment() {
     private lateinit var textInputLayoutEmail: TextInputLayout
     private lateinit var textInputLayoutFirstName: TextInputLayout
     private lateinit var textInputLayoutLastName: TextInputLayout
+    private lateinit var ccc: ConstraintLayout
     private lateinit var myView: View
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         myView = inflater.inflate(R.layout.fragment_profile, container, false)
         profileFragmentModel = ViewModelProvider(this)[ProfileFragmentModel::class.java]
         profileFragmentController = ProfileFragmentController(profileFragmentModel, this)
         imageViewUserImage = myView.findViewById<ImageView>(R.id.imageViewUserImage)
+        ccc = myView.findViewById<ConstraintLayout>(R.id.test)
         progressBar = myView.findViewById<ProgressBar>(R.id.progressBar)
         cardViewCamera = myView.findViewById<CardView>(R.id.cardViewCamera)
         buttonEditProfile = myView.findViewById<Button>(R.id.buttonEditProfile)
@@ -51,7 +58,27 @@ class ProfileFragment : Fragment() {
         profileFragmentController.setInfo()
         setButtonEditProfile()
         setButtonCamera()
+        setFullScreenImage()
         return myView
+    }
+
+    private fun setFullScreenImage() {
+        imageViewUserImage.setOnClickListener(View.OnClickListener {
+            val context: Context? = myView!!.context
+            if (context != null) {
+                val builder = AlertDialog.Builder(context)
+                val inflater: LayoutInflater = this.layoutInflater
+                val dialogView: View = inflater.inflate(R.layout.dialog_large_image, null)
+                builder.setCancelable(false)
+                builder.setView(dialogView)
+                val imageViewLargeImage: ImageView = dialogView.findViewById<ImageView>(R.id.imageViewLargeImage)
+                val alertDialog = builder.create()
+                alertDialog.setCanceledOnTouchOutside(true)
+                alertDialog.show()
+                alertDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                Glide.with(this).load(imageViewUserImage.drawable).into(imageViewLargeImage)
+            }
+        })
     }
     private fun setButtonCamera() {
         cardViewCamera.setOnClickListener {

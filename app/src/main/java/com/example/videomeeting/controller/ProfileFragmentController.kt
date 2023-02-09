@@ -115,5 +115,12 @@ class ProfileFragmentController(private var profileFragmentModel: ProfileFragmen
         return profileFragmentModel.getCameraPermissionCode()
     }
     fun setUri(uri: Uri){ profileFragmentModel.setUri(uri) }
+    fun getImage(): Uri? {
+        var firebaseUser = profileFragmentModel.getAuth().currentUser
+        if (firebaseUser != null) {
+            return firebaseUser.photoUrl
+        }
+        return null
+    }
 }
 
