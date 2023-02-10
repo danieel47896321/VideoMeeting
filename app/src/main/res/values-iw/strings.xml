@@ -55,6 +55,7 @@
     <string name="Message">הודעה</string>
     <string name="Call">שיחה</string>
     <string name="VideoCall">שיחת וידיאו</string>
+    <string name="BackIcon">כפתור חזרה</string>
     <!-- OutgoingCall Page -->
     <string name="Calling">מחייג</string>
     <string name="Cancel">בטל</string>

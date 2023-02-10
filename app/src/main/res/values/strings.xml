@@ -54,6 +54,7 @@
     <string name="Message">Message</string>
     <string name="Call">Call</string>
     <string name="VideoCall">Video Call</string>
+    <string name="BackIcon">Back Icon</string>
     <!-- OutgoingCall Page -->
     <string name="Calling">Calling</string>
     <string name="Cancel">Cancel</string>
