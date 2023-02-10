@@ -28,9 +28,9 @@ class OutgoingCall : AppCompatActivity() {
         textViewType = findViewById<TextView>(R.id.textViewType)
         textViewFullName = findViewById<TextView>(R.id.textViewFullName)
         if( type == "Call")
-            textViewType.text = "${resources.getString(R.string.Call)}..."
+            textViewType.text = "${resources.getString(R.string.Calling)}..."
         else
-            textViewType.text = "${resources.getString(R.string.VideoCall)}..."
+            textViewType.text = "${resources.getString(R.string.VideoCalling)}..."
         textViewFullName.text = "${destUser.firstName} ${destUser.lastName}"
         setNewCall()
         buttonCancel()
@@ -56,9 +56,12 @@ class OutgoingCall : AppCompatActivity() {
 
         }
     }
-    private fun buttonCancel() { imageViewButtonCancel.setOnClickListener{ onBackPressed() } }
+    private fun buttonCancel() {
+        imageViewButtonCancel.setOnClickListener {
+            onBackPressed()
+        }
+    }
     override fun onBackPressed() {
-        startActivity(Intent(this, Home::class.java))
         finish()
     }
 }

@@ -19,27 +19,24 @@ class MessageAdapter(private var list: ArrayList<Chat>, private var user: User, 
             val v = LayoutInflater.from(parent.context).inflate(R.layout.chat_view_sender, parent, false)
             ViewHolder(v)
         } else {
-            val v = LayoutInflater.from(parent.context).inflate(R.layout.chat_view_reciver, parent, false)
+            val v = LayoutInflater.from(parent.context).inflate(R.layout.chat_view_receiver, parent, false)
             ViewHolder(v)
         }
     }
     override fun onBindViewHolder(holder: MessageAdapter.ViewHolder, position: Int) {
-        val firebaseAuth = FirebaseAuth.getInstance()
         val chat = list[position]
         holder.textViewMessage.text = chat.message
-        if (list[position].sender == firebaseAuth.currentUser!!.uid) {
+        if (user.image != "none") {
             if (user.image != "none") {
-                if (user.image != "none" && view != null) {
-                    Glide.with(view!!).load(user.image).into(holder.imageViewUser)
-                }
+                Glide.with(view).load(user.image).into(holder.imageViewUser)
             }
         }
     }
     override fun getItemViewType(position: Int): Int {
         val firebaseAuth = FirebaseAuth.getInstance()
         if (list[position].sender == firebaseAuth.currentUser!!.uid)
-            return 1
-        return 0
+            return 0
+        return 1
     }
     override fun getItemCount(): Int {
         return list.size

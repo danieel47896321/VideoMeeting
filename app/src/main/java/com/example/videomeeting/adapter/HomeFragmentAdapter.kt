@@ -1,6 +1,5 @@
 package com.example.videomeeting.adapter
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -18,7 +17,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.videomeeting.R
 import com.example.videomeeting.myClass.User
-import com.example.videomeeting.userActivity.IncomingCall
 import com.example.videomeeting.userActivity.Message
 import com.example.videomeeting.userActivity.OutgoingCall
 
@@ -39,7 +37,7 @@ class HomeFragmentAdapter(private var list: ArrayList<User>, private var context
             holder.imageViewStatus.setImageResource(R.drawable.offline)
         }
         holder.cardViewUserImage.setOnClickListener {
-            val context: Context? = holder!!.itemView.context
+            val context: Context? = holder.itemView.context
             if (context != null) {
                 val builder = AlertDialog.Builder(context)
                 val inflater: LayoutInflater = LayoutInflater.from(context)
@@ -75,7 +73,6 @@ class HomeFragmentAdapter(private var list: ArrayList<User>, private var context
         intent.putExtra("type", type)
         intent.putExtra("destUser", destUser)
         holder.itemView.context.startActivity(intent)
-        (holder.itemView.context as Activity).finish()
     }
     override fun getItemCount(): Int {
         return list.size

@@ -2,7 +2,6 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/blue">
@@ -13,6 +12,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:contentDescription="@string/BackIcon"
             android:id="@+id/imageViewBackIcon"
             android:layout_width="35dp"
             android:layout_height="0dp"
@@ -30,14 +30,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
-            android:layout_marginEnd="2dp"
             android:gravity="center"
             android:text="@string/Title"
             android:textColor="@color/white"
-            android:textSize="24dp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/imageViewBackIcon"
-            app:layout_constraintEnd_toStartOf="@+id/imageViewMoreVert"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewCall"
             app:layout_constraintStart_toEndOf="@+id/cardViewUserImage"
             app:layout_constraintTop_toTopOf="@+id/imageViewBackIcon" />
 
@@ -66,15 +65,30 @@
         </androidx.cardview.widget.CardView>
 
         <ImageView
-            android:id="@+id/imageViewMoreVert"
-            android:layout_width="35dp"
-            android:layout_height="0dp"
+            android:id="@+id/imageViewCall"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
             android:clickable="true"
+            android:contentDescription="@string/Call"
             android:foreground="?android:attr/selectableItemBackground"
-            android:src="@drawable/more_vert"
-            app:layout_constraintBottom_toBottomOf="@+id/imageViewBackIcon"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/phone_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewVideo"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:contentDescription="@string/VideoCall"
+            android:id="@+id/imageViewVideo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="4dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:src="@drawable/video_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>

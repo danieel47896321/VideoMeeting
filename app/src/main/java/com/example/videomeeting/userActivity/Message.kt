@@ -1,5 +1,6 @@
 package com.example.videomeeting.userActivity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
@@ -28,13 +29,12 @@ class Message : AppCompatActivity() {
     private lateinit var textViewSend: TextView
     private lateinit var buttonSend: ImageButton
     private lateinit var imageViewBackIcon: ImageView
-    private lateinit var imageViewMoreVert: ImageView
+    private lateinit var imageViewCall: ImageView
+    private lateinit var imageViewVideo: ImageView
     private lateinit var imageViewUser: ImageView
     private lateinit var recyclerView: RecyclerView
     private lateinit var cardViewUserImage: CardView
-    private lateinit var navigationView: NavigationView
     private lateinit var user: User
-    private var isOpen: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_message)
@@ -44,31 +44,37 @@ class Message : AppCompatActivity() {
         messageModel = ViewModelProvider(this)[MessageModel::class.java]
         messageController = MessageController(messageModel, this)
         user = (intent.getSerializableExtra("user") as? User)!!
-        navigationView = findViewById<NavigationView>(R.id.navigationView)
         userName = findViewById<TextView>(R.id.userName)
         textViewSend = findViewById<TextView>(R.id.textViewSend)
         recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         buttonSend = findViewById<ImageButton>(R.id.buttonSend)
         imageViewBackIcon = findViewById<ImageView>(R.id.imageViewBackIcon)
-        imageViewMoreVert = findViewById<ImageView>(R.id.imageViewMoreVert)
+        imageViewCall = findViewById<ImageView>(R.id.imageViewCall)
+        imageViewVideo = findViewById<ImageView>(R.id.imageViewVideo)
         cardViewUserImage = findViewById<CardView>(R.id.cardViewUserImage)
         imageViewUser = findViewById<ImageView>(R.id.imageViewUser)
         messageController.setInfo(user)
         messageController.getMessages()
         setBackIcon()
         setSendMessage()
-        setMoreVert()
+        setCallIcon()
+        setVideoCallIcon()
     }
-
-    private fun setMoreVert() {
-        imageViewMoreVert.setOnClickListener {
-            isOpen = !isOpen
-            if (isOpen) {
-                navigationView.visibility = View.VISIBLE
-            } else {
-                navigationView.visibility = View.GONE
-            }
+    private fun setCallIcon() {
+        imageViewCall.setOnClickListener {
+            outGoingCall("Call")
         }
+    }
+    private fun setVideoCallIcon() {
+        imageViewVideo.setOnClickListener {
+            outGoingCall("Video")
+        }
+    }
+    private fun outGoingCall(type: String) {
+        val intent = Intent(this, OutgoingCall::class.java)
+        intent.putExtra("destUser", user)
+        intent.putExtra("type", type)
+        startActivity(intent)
     }
     private fun setSendMessage() {
         buttonSend.setOnClickListener {
@@ -86,7 +92,7 @@ class Message : AppCompatActivity() {
         }
     }
     override fun onBackPressed() {
-       finish()
+        finish()
     }
     fun setUserInfo(userFullName: String, image: String) {
         userName.text = userFullName

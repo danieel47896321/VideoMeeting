@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="@string/Call"
+        android:text="@string/Calling"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,6 +29,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewType">
 
         <ImageView
+            android:contentDescription="@string/UserImage"
             android:layout_width="100dp"
             android:layout_gravity="center"
             android:layout_height="100dp"
@@ -57,6 +58,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
+            android:contentDescription="@string/Cancel"
             android:foreground="?android:attr/selectableItemBackground"
             android:id="@+id/imageViewButtonCancel"
             android:background="@drawable/reject_background"

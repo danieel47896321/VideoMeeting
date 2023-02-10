@@ -14,8 +14,8 @@ class MessageController(private var messageModel: MessageModel, private var view
         messageModel.setUser(user)
         view.setUserInfo("${user.firstName} ${user.lastName}", user.image)
     }
-    fun getSender(): String { return messageModel.getUser().uid}
-    fun getReceiver(): String {
+    fun getReceiver(): String { return messageModel.getUser().uid}
+    fun getSender(): String {
         if (messageModel.getAuth().currentUser != null) {
             return messageModel.getAuth().currentUser!!.uid
         }
@@ -25,7 +25,7 @@ class MessageController(private var messageModel: MessageModel, private var view
         messageModel.getData().push().setValue(chat)
     }
     fun getMessages() {
-        var chats = ArrayList<Chat>()
+        val chats = ArrayList<Chat>()
         messageModel.getData().addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 chats.clear()
