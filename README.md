@@ -1,7 +1,9 @@
 # VideoMeeting Application
 
-VideoMeeting is app to video or normal.
+VideoMeeting is app to chat with friends and make video or normal calls.
 The database is Firebase.
+Implemented MVC architecture.
+
 
 ![CHEESE!](https://user-images.githubusercontent.com/74861262/217925062-7020b204-32e6-48cf-aa67-22c37cc6e2a2.png)
 ![CHEESE!](https://user-images.githubusercontent.com/74861262/217925085-60fbbf03-8157-45f6-a03f-3d2c54cf1743.png)
