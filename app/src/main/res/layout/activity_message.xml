@@ -18,11 +18,11 @@
 
     <LinearLayout
         android:id="@+id/linearLayoutMessage"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_above="@+id/cardViewMessage"
-        android:layout_below="@+id/header"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/cardViewMessage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,8 +32,18 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
     </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="180dp"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:menu="@menu/more_vert" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewMessage"
@@ -50,7 +60,7 @@
             android:layout_height="match_parent">
 
             <ImageButton
-                android:id="@+id/ButtonSend"
+                android:id="@+id/buttonSend"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginEnd="4dp"
@@ -61,7 +71,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/TextSend"
+                android:id="@+id/textViewSend"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_centerVertical="true"
@@ -74,7 +84,7 @@
                 android:hint="@string/Message"
                 android:textColorHint="@color/default_color"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/ButtonSend"
+                app:layout_constraintEnd_toStartOf="@+id/buttonSend"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

@@ -52,10 +52,12 @@
     <string name="Search">Search</string>
     <!-- Message Page -->
     <string name="Message">Message</string>
+    <string name="Call">Call</string>
+    <string name="VideoCall">Video Call</string>
     <!-- OutgoingCall Page -->
-    <string name="Call">Calling</string>
+    <string name="Calling">Calling</string>
     <string name="Cancel">Cancel</string>
-    <string name="VideoCall">Video Calling</string>
+    <string name="VideoCalling">Video Calling</string>
     <!-- IncomingCall Page -->
     <string name="Accept">Accept</string>
     <string name="Reject">Reject</string>

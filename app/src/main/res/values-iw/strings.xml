@@ -53,10 +53,12 @@
     <string name="Search">חיפוש</string>
     <!-- Message Page -->
     <string name="Message">הודעה</string>
-    <!-- OutgoingCall Page -->
-    <string name="Call">מחייג</string>
-    <string name="Cancel">בטל</string>
+    <string name="Call">שיחה</string>
     <string name="VideoCall">שיחת וידיאו</string>
+    <!-- OutgoingCall Page -->
+    <string name="Calling">מחייג</string>
+    <string name="Cancel">בטל</string>
+    <string name="VideoCalling">שיחת וידיאו</string>
     <!-- IncomingCall Page -->
     <string name="Accept">קבל</string>
     <string name="Reject">דחה</string>

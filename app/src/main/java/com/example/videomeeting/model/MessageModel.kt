@@ -3,11 +3,16 @@ package com.example.videomeeting.model
 import androidx.lifecycle.ViewModel
 import com.example.videomeeting.myClass.User
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class MessageModel: ViewModel() {
     private var user: User = User()
+    private val firebaseDatabase = FirebaseDatabase.getInstance("https://videomeeting-86807-default-rtdb.europe-west1.firebasedatabase.app")
+    private val databaseReference = firebaseDatabase.reference.child("Chats")
     private val firebaseAuth = FirebaseAuth.getInstance()
+    fun getData(): DatabaseReference { return databaseReference }
     fun getAuth(): FirebaseAuth { return firebaseAuth }
-    fun getUser(user: User) { this.user = user }
-    fun setUser(user: User): User { return this.user }
+    fun setUser(user: User){ this.user = user }
+    fun getUser(): User { return this.user }
 }

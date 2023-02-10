@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/itemCall"
+        android:title="@string/Call"
+        app:showAsAction="never"
+        android:icon="@drawable/phone" />
+
+    <item
+        android:id="@+id/itemVideoCall"
+        android:title="@string/VideoCall"
+        app:showAsAction="never"
+        android:icon="@drawable/video" />
+</menu>

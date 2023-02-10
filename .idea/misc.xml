@@ -25,15 +25,17 @@
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/drawable/vm_launcher_background.xml" value="0.3005" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/drawable/white_background.xml" value="0.2145" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/activity_history.xml" value="0.35260416666666666" />
-        <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/activity_incoming_call.xml" value="0.25" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/activity_message.xml" value="0.2755208333333333" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/activity_message.xml" value="0.33" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/activity_outgoing_call.xml" value="0.25" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/activity_profile.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/activity_reset_password.xml" value="0.22" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/activity_video_meeting.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/asdasd.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/chat_view_reciver.xml" value="1.0" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/chat_view_sender.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/dialog_camera.xml" value="0.27708333333333335" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/dialog_large_image.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/fragment_chat.xml" value="0.36666666666666664" />
@@ -43,11 +45,12 @@
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/fragment_sign_in.xml" value="0.25" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/header.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/user_header.xml" value="0.5" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/user_header.xml" value="0.25" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/user_view.xml" value="0.67" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/layout/userbar.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/menu/bottom_menu.xml" value="0.24114583333333334" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/menu/bottom_navigation.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/menu/more_vert.xml" value="0.24739583333333334" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/mipmap-anydpi-v26/videomeeting_launcher_round.xml" value="0.283" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/VideoMeeting/app/src/main/res/mipmap-anydpi-v26/vm_launcher.xml" value="0.3005" />
       </map>
